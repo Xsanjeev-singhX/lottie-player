@@ -534,9 +534,7 @@ export class LottiePlayer extends LitElement {
     // }
 
     // Remove the attached Visibility API's change event listener.
-    document.removeEventListener("visibilitychange", () =>
-      this._onVisibilityChange()
-    );
+    document.removeEventListener("visibilitychange", this._onVisibilityChange);
 
     // Destroy the animation instance and element
     this.destroy();
@@ -599,9 +597,7 @@ export class LottiePlayer extends LitElement {
 
     // Add listener for Visibility API's change event.
     if (typeof document.hidden !== "undefined") {
-      document.addEventListener("visibilitychange", () =>
-        this._onVisibilityChange()
-      );
+      document.addEventListener("visibilitychange", this._onVisibilityChange);
     }
 
     // Setup lottie player
